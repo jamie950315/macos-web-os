@@ -67,7 +67,7 @@ pnpm build
 
 ## 📦 Deployment
 
-The project is configured for automatic deployment to GitHub Pages via GitHub Actions. Every push to the `main` branch triggers a new deployment.
+The project is configured for automatic deployment to GitHub Pages via GitHub Actions. Every push to the `master` branch triggers a new deployment.
 
 ### Manual Deployment
 
