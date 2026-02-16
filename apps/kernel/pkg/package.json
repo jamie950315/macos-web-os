@@ -1,0 +1,15 @@
+{
+  "name": "darwin-kernel",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "darwin_kernel_bg.wasm",
+    "darwin_kernel.js",
+    "darwin_kernel.d.ts"
+  ],
+  "main": "darwin_kernel.js",
+  "types": "darwin_kernel.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

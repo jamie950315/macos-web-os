@@ -1,0 +1,23 @@
+{
+  "name": "macos-web",
+  "private": true,
+  "version": "14.0.0-sonoma",
+  "packageManager": "pnpm@8.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "deploy:k8s": "./scripts/deploy.sh production",
+    "bootstrap": "cargo build --release && pnpm install"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
+  }
+}
