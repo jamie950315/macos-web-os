@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Volume2, Music as MusicIcon } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Music as MusicIcon } from 'lucide-react';
 
 export const Music: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [volume, setVolume] = useState(0.8);
+  const [volume] = useState(0.8);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 

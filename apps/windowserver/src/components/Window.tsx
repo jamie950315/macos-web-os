@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useDragControls, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useDragControls } from 'framer-motion';
 import { useWindowManager } from '../store/windowManager';
 
 interface WindowProps {

@@ -7,7 +7,7 @@ interface WindowFrameProps {
 }
 
 export const WindowFrame: React.FC<WindowFrameProps> = ({ windowState }) => {
-  const { closeWindow, minimizeWindow, maximizeWindow, focusWindow, moveWindow, resizeWindow } =
+  const { closeWindow, minimizeWindow, maximizeWindow, focusWindow, moveWindow } =
     useWindowManager();
 
   const dragRef = useRef({ startX: 0, startY: 0, winX: 0, winY: 0, dragging: false });

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
-import { Camera as CameraIcon, RefreshCw, Save } from 'lucide-react';
+import { RefreshCw, Save } from 'lucide-react';
 import { KernelAPI } from '@macos/darwin-api';
 
 export const Camera: React.FC = () => {

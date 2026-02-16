@@ -7,7 +7,7 @@ import { MenuBar } from './components/MenuBar';
 import { Dock } from './components/Dock';
 import { WindowLayer } from './components/WindowLayer';
 import { KernelAPI } from '@macos/darwin-api';
-import { Search, Command } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 // @ts-ignore
 import init, { DarwinKernel } from '../../kernel/pkg/darwin_kernel';
@@ -119,7 +119,7 @@ export const WindowServer: React.FC = () => {
       }
   };
 
-  const filteredApps = Object.entries(APPS_MAP).filter(([id, app]) => 
+  const filteredApps = Object.entries(APPS_MAP).filter(([, app]) => 
       app.name.toLowerCase().includes(spotlightQuery.toLowerCase())
   );
 

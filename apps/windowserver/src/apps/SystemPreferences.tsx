@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useSystemStore } from '@macos/windowserver/store';
+import { useSystemStore } from '../store/systemStore';
 import { 
-  Moon, Sun, Monitor, Info, Image as ImageIcon, Wifi, Bluetooth, 
-  Globe, Bell, Lock, Fingerprint, Keyboard, Mouse, Battery, Folder
+  Monitor, Image as ImageIcon, Wifi, Bluetooth, 
+  Globe, Bell, Lock
 } from 'lucide-react';
 
 const Switch: React.FC<{ checked: boolean; onChange: (v: boolean) => void }> = ({ checked, onChange }) => (

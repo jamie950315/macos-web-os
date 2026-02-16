@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Editor, { useMonaco } from '@monaco-editor/react';
+import React, { useState, useEffect } from 'react';
+import Editor from '@monaco-editor/react';
 import { KernelAPI } from '@macos/darwin-api';
 import { 
   Files, Search, GitGraph, Box, Settings, 
   ChevronRight, ChevronDown, X, Terminal as TerminalIcon,
-  Layout, Maximize2, MoreHorizontal
+  Layout
 } from 'lucide-react';
 import { TerminalApp } from './Terminal'; // Reuse our power terminal
 

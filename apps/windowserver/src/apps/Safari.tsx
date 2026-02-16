@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RefreshCcw, ArrowLeft, ArrowRight, Lock, Plus, X, Star, BookOpen, Share } from 'lucide-react';
+import { RefreshCcw, ArrowLeft, ArrowRight, Lock, Plus, X, BookOpen, Share } from 'lucide-react';
 
 interface Tab {
   id: string;
