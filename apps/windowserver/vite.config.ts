@@ -6,6 +6,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), wasm(), topLevelAwait()],
+  base: '/macos-web-os/',
   resolve: {
     alias: {
       '@macos/darwin-api': path.resolve(__dirname, '../../packages/darwin-api/src'),
