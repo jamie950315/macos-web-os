@@ -4,7 +4,7 @@ import { Play, Pause, SkipBack, SkipForward, Music as MusicIcon } from 'lucide-r
 export const Music: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [volume] = useState(0.8);
+  const [volume] = useState(0.8); // Reserved for volume control feature
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
