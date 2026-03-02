@@ -1,15 +1,15 @@
 # 多階段建構：建構 Rust Kernel → 建構 React Apps → 最終 Nginx 映像
 
 # 階段 1: 建構 Rust WebAssembly
-FROM rust:1.75-slim as wasm-builder
+FROM rust:1.85-slim AS wasm-builder
 
-RUN apt-get update && apt-get install -y pkg-config libssl-dev clang
+RUN apt-get update && apt-get install -y pkg-config libssl-dev clang curl
 
 WORKDIR /build
 COPY apps/kernel ./apps/kernel
 
 WORKDIR /build/apps/kernel
-RUN cargo install wasm-pack
+RUN curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 RUN wasm-pack build --target web --out-dir pkg
 
 # 階段 2: 建構 Node 應用程式
@@ -33,13 +33,10 @@ RUN pnpm build
 FROM nginx:alpine
 
 COPY infra/docker/nginx.conf /etc/nginx/nginx.conf
-COPY --from=node-builder /build/apps/windowserver/dist /usr/share/nginx/html
-COPY --from=node-builder /build/apps/apps/finder/dist /usr/share/nginx/html/apps/finder
-COPY --from=node-builder /build/apps/apps/safari/dist /usr/share/nginx/html/apps/safari
-COPY --from=node-builder /build/apps/apps/terminal/dist /usr/share/nginx/html/apps/terminal
+COPY --from=node-builder /build/apps/windowserver/.dist /usr/share/nginx/html
 
 # 健康檢查
 HEALTHCHECK --interval=30s --timeout=3s \
-  CMD wget --quiet --tries=1 --spider http://localhost:80/ || exit 1
+  CMD wget --quiet --tries=1 --spider http://localhost:3333/ || exit 1
 
-EXPOSE 80
+EXPOSE 3333

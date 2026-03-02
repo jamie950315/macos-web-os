@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSystemStore } from '@macos/windowserver/store';
+import { useSystemStore } from '../store';
 import { 
   Moon, Sun, Monitor, Info, Image as ImageIcon, Wifi, Bluetooth, 
   Globe, Bell, Lock, Fingerprint, Keyboard, Mouse, Battery, Folder
